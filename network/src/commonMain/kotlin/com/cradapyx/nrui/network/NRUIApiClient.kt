@@ -1,6 +1,6 @@
 package com.cradapyx.nrui.network
 
-import com.cradapyx.nrui.network.model.PublishingType
+import com.cradapyx.nrui.common.PublishingType
 import com.cradapyx.nrui.network.model.RepositoriesRemote
 import com.cradapyx.nrui.network.model.RepositoryState
 import com.cradapyx.nrui.network.model.RequestingIp

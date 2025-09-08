@@ -17,7 +17,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-//            implement
+            implementation(projects.commonModel)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

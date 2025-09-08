@@ -34,6 +34,7 @@ plugins {
 
 include(":ui")
 include(":viewmodel")
+include(":common-model")
 include(":usecases", ":usecases-implementation")
 include(":network", ":network-implementation", ":network:model")
 include(":service", ":service-implementation", ":service:model", ":service-mock")

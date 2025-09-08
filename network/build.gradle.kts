@@ -16,6 +16,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(projects.network.model)
+            implementation(projects.commonModel)
         }
 
         commonTest.dependencies {

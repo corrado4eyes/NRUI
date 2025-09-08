@@ -1,10 +1,9 @@
 package com.cradapyx.network.impl
 
+import com.cradapyx.nrui.common.PublishingType
 import com.cradapyx.nrui.network.NRUIApiClient
 import com.cradapyx.nrui.network.model.OssrhStagingApiError
-import com.cradapyx.nrui.network.model.PublishingType
 import com.cradapyx.nrui.network.model.RepositoriesRemote
-import com.cradapyx.nrui.network.model.RepositoryRemote
 import com.cradapyx.nrui.network.model.RepositoryState
 import com.cradapyx.nrui.network.model.RequestingIp
 import com.cradapyx.nrui.network.model.UnauthorizedException
@@ -12,7 +11,6 @@ import com.cradapyx.nrui.service.AccessTokenService
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.HttpClientEngine
-import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.HttpResponseValidator
 import io.ktor.client.plugins.auth.Auth
 import io.ktor.client.plugins.auth.providers.BearerTokens
@@ -26,10 +24,10 @@ import io.ktor.client.request.post
 import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpStatusCode
 import io.ktor.http.URLProtocol
-import io.ktor.http.append
-import io.ktor.http.parameters
 import io.ktor.http.path
 import io.ktor.serialization.kotlinx.json.json
+import io.ktor.utils.io.core.toByteArray
+import kotlin.io.encoding.Base64
 
 class NRUIApiClientImpl(
     engine: HttpClientEngine,
@@ -61,7 +59,6 @@ class NRUIApiClientImpl(
                 append(HttpHeaders.ContentType, "application/json")
             }
         }
-
         HttpResponseValidator {
             validateResponse { response ->
                 val statusCode = response.status
