@@ -19,6 +19,7 @@ kotlin {
         commonMain.dependencies {
             implementation(projects.network)
             implementation(projects.network.model)
+            implementation(projects.commonModel)
             implementation(projects.service)
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)

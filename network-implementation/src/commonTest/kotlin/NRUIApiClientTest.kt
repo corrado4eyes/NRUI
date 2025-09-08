@@ -1,7 +1,7 @@
 import com.cradapyx.network.impl.NRUIApiClientImpl
+import com.cradapyx.nrui.common.PublishingType
 import com.cradapyx.nrui.network.NRUIApiClient
 import com.cradapyx.nrui.network.model.OssrhStagingApiError
-import com.cradapyx.nrui.network.model.PublishingType
 import com.cradapyx.nrui.network.model.RepositoriesRemote
 import com.cradapyx.nrui.network.model.RepositoryRemote
 import com.cradapyx.nrui.network.model.RepositoryState
