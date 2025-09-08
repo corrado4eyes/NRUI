@@ -10,8 +10,7 @@ data class RepositoriesRemote(
 
 @Serializable
 data class RepositoryRemote(
-    @SerialName("key")
-    val id: String,
+    val key: String,
     val description: String,
     @SerialName("portal_deployment_id")
     val portalDeploymentId: String,

@@ -15,8 +15,8 @@ interface NRUIApiClient {
         repositoryKey: String,
     )
     suspend fun getRepositories(
-        profileId: String,
-        state: RepositoryState,
-        ip: RequestingIp,
+        profileId: String? = null,
+        state: RepositoryState = RepositoryState.OPEN,
+        ip: RequestingIp = RequestingIp.ANY,
     ): RepositoriesRemote
 }

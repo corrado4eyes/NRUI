@@ -17,10 +17,28 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-//            implement
+            implementation(projects.network)
+            implementation(projects.network.model)
+            implementation(projects.service)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.json.serialization)
+            implementation(libs.ktor.client.auth)
         }
+
+        jvmMain.dependencies {
+            implementation(libs.ktor.client.engine.jvm)
+        }
+
+        jsMain.dependencies {
+            implementation(libs.ktor.client.engine.js)
+        }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+            implementation(libs.kotlinx.coroutinesTest)
+            implementation(libs.ktor.client.mock)
+            implementation(projects.serviceMock)
         }
     }
 }
