@@ -32,4 +32,7 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
 
-include(":composeApp")
+include(":ui")
+include(":viewmodel")
+include(":usecases", ":usecases-implementation")
+include(":network", ":network-implementation", ":network:model")
